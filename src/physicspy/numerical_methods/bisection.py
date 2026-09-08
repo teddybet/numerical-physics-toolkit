@@ -37,6 +37,7 @@ def bisection(f, xl, xu, es, max_iterations=100):
     xr_old = None
     ea = float('inf')
     iterations = 0
+    history = []
 
     while ea > es and iterations < max_iterations:
         xr = (xl + xu) / 2
@@ -51,6 +52,7 @@ def bisection(f, xl, xu, es, max_iterations=100):
 
         xr_old = xr
         iterations += 1
+        history.append((iterations, xl, xu, xr, ea))
     if ea > es:
             raise RuntimeError("Maximum number of iterations reached.")
-    return xr, ea, iterations
+    return xr, ea, iterations, history
