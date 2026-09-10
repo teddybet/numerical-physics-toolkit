@@ -19,4 +19,10 @@ plt.xlabel("Horizontal Distance (m)")
 plt.ylabel("Height (m)")
 plt.title("Projectile Motion")
 plt.grid()
+plt.savefig(
+    "images/projectile_motion.png",
+    dpi=300,
+    bbox_inches="tight"
+)
+
 plt.show()
